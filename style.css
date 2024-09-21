@@ -61,11 +61,12 @@ body {
   background-color: var(--black-transparent);
   margin: 0 auto;
   justify-content: space-between;
+  align-items: center;
 }
-#header-buttons-div {
+/* #header-buttons-div {
   margin-right: 0;
   display: flex;
-}
+} */
 #color-btn {
   width: 120px;
   height: 30px;
@@ -92,7 +93,6 @@ main {
   width: 80%;
   margin: 0 auto;
   display: block;
-  height: 500px;
 }
 #searchContainer {
   visibility: hidden;
@@ -106,7 +106,7 @@ main {
   background-color: var(--black-transparent);
 }
 #empty-message {
-  color: var(--default-yellow-color);
+  color: var(--default-font-color);
 }
 .link {
   display: flex;
