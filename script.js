@@ -373,7 +373,14 @@ function createTableBody(data, headers) {
           createModal(item);
         });
         removeRowBtn.addEventListener("click", () => {
-          deleteSelectedButton.style.display = "none";
+          const checkboxes = table.querySelectorAll("input[type='checkbox']");
+          const checked = Array.from(checkboxes).filter(
+            (checkbox) => checkbox.checked
+          );
+          if (checked.length === 1) {
+            deleteSelectedButton.style.display = "none";
+          }
+
           const row = td.closest("tr");
           if (row) {
             row.remove();
@@ -445,6 +452,7 @@ function updateDeleteButtonVisibility() {
   const anyChecked = Array.from(checkboxes).some(
     (checkbox) => checkbox.checked
   );
+
   deleteSelectedButton.style.display = anyChecked ? "block" : "none";
 }
 function paginateTable(rowsPerPage, page) {
